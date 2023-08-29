@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    color: #274867;
+}
+
+p {
+    color: #000;
+}
+
+header,
+footer,
+main {
+    padding: 2rem 4.8rem;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header {
+    border-bottom: 1px solid rgba(1, 124, 255, 0.5);
+}
+
+header > nav {
+    display: flex;
+    gap: 3.2rem;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+
+a#nav-brand,
+footer > a:first-child {
+    font-weight: 700;
+}
+
+main {
+    background-color: #E5F2FF;
+    text-align: center;
+}
+
+main > * {
+    margin-bottom: 7.2rem;
+}
+
+.hero {
+    max-width: 50rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero > h1 {
+    margin-bottom: 1.4rem;
+    font-size: 4.8rem;
+    color: #273855;
+}
+
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11rem;
+}
+
+.card {
+    min-width: 20rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.6rem 0 2.6rem;
+    border: 1px solid #273855;
+    box-shadow: .5rem .6rem #274867;
+}
+
+.card-header {
+    margin-bottom: 1.4rem;
+    border-bottom: .1rem solid #274867;
+    padding-bottom: 1.4rem;
+}
+
+.card-body {
+    padding: 0 3.6rem;
+}
+
+.card-body > *:not(:last-child) {
+    padding-bottom: 2.4rem;
+}
+
+button {
+    padding: .7rem 1.2rem;
+    border-radius: .6rem;
+    border: none;
+    box-shadow: .2rem .2rem #274867;
+    background-color: #C0E8FF;
+    font-size: inherit;
+}
+
+.pricing-table > table {
+    margin: 0 auto;
+    width: 40%;
+    height: 25rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #fff;
+    text-align: left;
+    vertical-align: center;
+}
+
+table th,
+table td {
+    padding: 1.2rem;
+    border: 1px solid black;
+}
+
+#col-1 {
+    width: 34%;
+}
+
+#col-2,
+#col-3,
+#col-4 {
+    width: 22%;
+}
+
+.pricing-table > h2 {
+    margin-bottom: 2.4rem;
+    font-size: 3.2rem;
+    color: #273855;
+}
+
+footer {
+    border-top: 1px solid rgba(1, 124, 255, 0.5);
+}
+
+@media screen and (max-width: 426px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        justify-content: center;
+        gap: 1.4rem;
+    }
+
+    main > * {
+        margin-bottom: 5.6rem;
+    }
+
+    .pricing-cards {
+        gap: 4.8rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+    }
+}

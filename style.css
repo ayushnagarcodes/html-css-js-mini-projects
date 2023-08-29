@@ -1,0 +1,120 @@
+:root {
+    --ff-primary: "", sans-serif;
+
+    --fs-300: 1.6rem;
+    --fs-400: 1.8rem;
+    --fs-500: 2rem;
+    --fs-600: 3rem;
+    --fs-700: 4.4rem;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --lh-400: 1;
+    --lh-500: 1.05;
+    --lh-600: 1.5;
+    --lh-700: 1.8;
+
+    --ls-400: 0.5px;
+    --ls-500: 0.75px;
+
+    --clr-primary-000: #ffffff;
+    --clr-primary-100: #fdf2e9;
+    --clr-primary-200: #e67e22;
+    --clr-primary-300: #45260a;
+
+    --clr-neutral-000: #6f6f6f;
+    --clr-neutral-100: #555;
+    --clr-neutral-200: #333;
+
+    --box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+    --br-400: 0.9rem;
+    --br-500: 1.1rem;
+}
+
+/*****************/
+/* Reset default */
+/*****************/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 10rem 4rem;
+    max-width: 144rem;
+    margin: 0 auto;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-200);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    outline: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: var(--lh-400);
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+/********/
+/* Main */
+/********/
+
+h1.main-heading {
+    margin: 0 auto 9rem;
+    font-size: 6.4rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    word-spacing: 0.8rem;
+    letter-spacing: -0.2rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 120rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 40%));
+    gap: 4.8rem;
+    justify-content: center;
+}
+
+.card {
+    border: 3px solid #000;
+    aspect-ratio: 4 / 3;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}

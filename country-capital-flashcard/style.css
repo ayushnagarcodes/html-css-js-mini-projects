@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Oswald:wght@500&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px;
+    background-image: url("./blue_gradient.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin: 20px 0 40px;
+    font-size: 40px;
+    text-align: center;
+    color: #f4fcfe;
+    font-family: "Oswald", sans-serif;
+    color: #5f828b;
+    mix-blend-mode: difference;
+}
+
+section {
+    margin: 0 auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 153px);
+    gap: 2rem;
+    justify-content: center;
+    perspective: 1800px;
+}
+
+.card {
+    width: 153px;
+    aspect-ratio: 1 / 1;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.country-card,
+.capital-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background: linear-gradient(
+        314.52deg,
+        rgba(255, 253, 253, 0) 0%,
+        rgba(255, 255, 255, 0.4) 126.86%
+    );
+    box-shadow: 7px 7px 10px -7px rgba(38, 38, 62, 0.6);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    padding: 0px 40px 0px 40px;
+    color: #303041;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.capital-card {
+    transform: rotateY(180deg);
+}
+
+.capital-card {
+    background: linear-gradient(
+        140deg,
+        rgba(255, 255, 255, 0.8) -60%,
+        rgb(78, 64, 202)
+    );
+}
+
+.country,
+.capital {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+.capital-card > p {
+    color: #f4fcfe;
+}
+
+aside {
+    position: absolute;
+    top: 230px;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    border-radius: 10px;
+}
+
+.side-nav {
+    height: 67px;
+    width: 67px;
+    transition: all 0.3s ease;
+}
+
+.side-nav:hover {
+    transform: scale(120%);
+    border-radius: 12px;
+}

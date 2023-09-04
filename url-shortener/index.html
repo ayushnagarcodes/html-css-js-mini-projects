@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>URL Shortner</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1>URL Shortener</h1>
+                <div>
+                    <input
+                        type="text"
+                        id="input-url"
+                        placeholder="Enter a url"
+                    />
+                    <div class="button-container">
+                        <button id="button-create">Create</button>
+                        <button id="button-delete">Delete</button>
+                    </div>
+                </div>
+                <ol id="list-url"></ol>
+            </section>
+            <div class="tooltip">
+                <span
+                    ><img src="./help-circle-outline.svg" alt="tooltip"
+                /></span>
+                <div class="content">
+                    <ul>
+                        <li>
+                            It shortens the given URL and lists it on the page.
+                            It can't be shared (works locally).
+                        </li>
+                        <li>
+                            It increases the click count every time a link is
+                            opened.
+                        </li>
+                        <li>
+                            Delete a URL from the list or delete all URLs:
+                            <ul>
+                                <li>
+                                    Type the short link or the original URL link
+                                    in the input box and click the "Delete"
+                                    button to remove it (this will delete all
+                                    short links that directs to the URL).
+                                </li>
+                                <li>
+                                    Simply click the "Delete" button while
+                                    leaving the input box blank to remove all
+                                    short links.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>You can also edit the short link.</li>
+                        <li>
+                            The URL should be correct otherwise an error is
+                            displayed. It should:
+                            <ul>
+                                <li>start with "http://" or "https://"</li>
+                                <li>
+                                    contain a proper TLD, for example ".com"
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

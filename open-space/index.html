@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open Space</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="space">
+                <div class="planet-area">
+                    <img class="planet" src="images/planet.webp" alt="planet" />
+                    <img class="rocket" src="images/rocket.png" alt="rocket" />
+                </div>
+                <div class="control-panel">
+                    <div class="input-password">
+                        <input
+                            type="password"
+                            placeholder="Enter 'LaunchIt' to unlock"
+                            title="Password: LaunchIt"
+                            autofocus
+                        />
+                        <input
+                            id="ok-btn"
+                            type="button"
+                            value="Ok"
+                            onclick="checkPassword(this)"
+                        />
+                    </div>
+                    <div class="mid-input-container">
+                        <div class="adjust-panel">
+                            <div class="adjust-speed">
+                                <label for="adjust-speed-lever"
+                                    >Adjust speed:</label
+                                >
+                                <p>Slow</p>
+                                <input
+                                    id="adjust-speed-lever"
+                                    type="range"
+                                    value="25"
+                                    max="100"
+                                    step="37.5"
+                                    disabled
+                                />
+                            </div>
+                            <div class="adjust-trajectory">
+                                <label for="adjust-trajectory-lever"
+                                    >Adjust trajectory:</label
+                                >
+                                <p>40 degree</p>
+                                <input
+                                    id="adjust-trajectory-lever"
+                                    type="range"
+                                    value="40"
+                                    max="60"
+                                    step="20"
+                                    disabled
+                                />
+                            </div>
+                        </div>
+                        <div class="normal-input-container">
+                            <div class="check-buttons">
+                                <input
+                                    type="checkbox"
+                                    title="Check me"
+                                    disabled
+                                />
+                                <input
+                                    type="checkbox"
+                                    title="Check me"
+                                    disabled
+                                />
+                                <input
+                                    type="checkbox"
+                                    title="Check me"
+                                    disabled
+                                />
+                            </div>
+                            <div class="levers">
+                                <input
+                                    type="range"
+                                    title="Move the slider up"
+                                    disabled
+                                />
+                                <input
+                                    type="range"
+                                    title="Move the slider up"
+                                    disabled
+                                />
+                                <input
+                                    type="range"
+                                    title="Move the slider up"
+                                    disabled
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="launch-control">
+                        <button
+                            id="launch-btn"
+                            onclick="launchRocket()"
+                            disabled
+                        >
+                            <img
+                                src="images/rocket-icon.png"
+                                alt="launch"
+                            /><span>Launch</span>
+                        </button>
+                        <button id="relaunch-btn" onclick="reload()" disabled>
+                            <img src="images/reset.png" alt="re-launch" /><span
+                                >Re-Launch</span
+                            >
+                        </button>
+                    </div>
+                </div>
+                <div class="count-down active">
+                    <p id="count-down-3">3..</p>
+                    <p id="count-down-2">2...</p>
+                    <p id="count-down-1">1..</p>
+                    <p id="lift-off">liftoff!</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="message">
+            <p>Please switch to a wide screen!</p>
+        </div>
+
+        <div class="tooltip">
+            <span
+                ><img src="./images/help-circle-outline.svg" alt="tooltip"
+            /></span>
+            <div class="content">
+                <ul>
+                    <li>
+                        It is a fun simulation of a rocket launch using HTML,
+                        CSS & JavaScript.
+                    </li>
+                    <li>
+                        How to launch the rocket?
+                        <ul>
+                            <li>
+                                First, you need to enter the password: LaunchIt
+                            </li>
+                            <li>
+                                It will unlock some input sliders and
+                                checkboxes. The 'Launch' & 'Re-Launch' button
+                                are still locked.
+                            </li>
+                            <li>
+                                All the checkboxes must be ticked and the
+                                sliders below it should be up to its max limit
+                                in order to unlock the 'Launch' button.
+                            </li>
+                            <li>
+                                You can adjust the speed & the trajectory angle
+                                of the rocket.
+                            </li>
+                            <li>Finally, press 'Launch'.</li>
+                            <li>
+                                There will be a count-down and the rocket will
+                                be launched. You can try different combinations
+                                of speed & trajectory angle.
+                            </li>
+                            <li>
+                                Click on 'Re-Launch' button to launch it again.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        It was a fun project and I learned a lot about
+                        postioning elements, transition & animation using CSS,
+                        DOM methods, etc.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

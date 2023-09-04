@@ -1,0 +1,368 @@
+:root {
+    --top-position: -500px;
+    --left-position: 300px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+}
+
+.space {
+    width: 100vw;
+    height: 100vh;
+    background: url("images/space.webp");
+    background-size: cover;
+    z-index: 0;
+    position: relative;
+}
+
+.planet {
+    height: 500px;
+    width: auto;
+    transform: rotateY(180deg);
+    position: relative;
+    bottom: -250px;
+    z-index: 2;
+}
+
+.rocket {
+    height: 250px;
+    width: auto;
+    transform: rotateZ(40deg);
+    transition: transform 1s ease-in-out;
+    position: relative;
+    top: 50px;
+    left: -200px;
+    z-index: 1;
+}
+
+@keyframes rocket-animation {
+    to {
+        top: var(--top-position);
+        left: var(--left-position);
+    }
+}
+
+.animation {
+    animation: rocket-animation 8s ease-in;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.control-panel {
+    height: 400px;
+    width: 500px;
+    background: linear-gradient(
+        99.53deg,
+        rgba(255, 255, 255, 0.18) -15.6%,
+        rgba(255, 255, 255, 0.07) 111.52%
+    );
+    box-shadow: 4px 4px 24px -1px rgba(35, 57, 54, 0.25);
+    backdrop-filter: blur(25px);
+    position: absolute;
+    right: 84px;
+    bottom: 72px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 24px;
+}
+
+.input-password {
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-password input:first-child {
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.input-password input:first-child:focus {
+    outline: none;
+}
+
+#ok-btn {
+    height: 34px;
+    width: 48px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+#ok-btn:disabled {
+    background-color: rgb(160, 160, 160);
+}
+
+.adjust-panel label {
+    color: whitesmoke;
+}
+
+.adjust-panel p {
+    padding: 2px 8px;
+    color: rgb(9, 9, 35);
+    background-color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.adjust-speed,
+.adjust-trajectory {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.adjust-speed {
+    margin-bottom: 24px;
+}
+
+#adjust-speed-lever,
+#adjust-trajectory-lever {
+    cursor: pointer;
+}
+
+#adjust-speed-lever:disabled,
+#adjust-trajectory-lever:disabled {
+    cursor: not-allowed;
+}
+
+.mid-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.normal-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
+}
+
+.check-buttons {
+    margin-top: 2px;
+    margin-right: 8px;
+    display: flex;
+    gap: 70px;
+}
+
+.check-buttons input {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.check-buttons input:first-child {
+    margin-left: auto;
+}
+
+.check-buttons input:disabled {
+    cursor: not-allowed;
+}
+
+.levers input {
+    transform: rotateZ(-90deg);
+    margin: auto -48px auto 0;
+    cursor: pointer;
+}
+
+.levers input:disabled {
+    cursor: not-allowed;
+}
+
+.launch-control {
+    display: flex;
+    gap: 36px;
+}
+
+.launch-control button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#launch-btn,
+#relaunch-btn {
+    height: 32px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+#launch-btn:disabled,
+#relaunch-btn:disabled {
+    background-color: rgb(160, 160, 160);
+    cursor: not-allowed;
+}
+
+#launch-btn img,
+#relaunch-btn img {
+    height: 24px;
+    width: auto;
+}
+
+.count-down {
+    position: absolute;
+    top: 24px;
+    left: 25%;
+    color: rgb(228, 228, 228);
+    line-height: 1.2;
+}
+
+#count-down-3,
+#count-down-2,
+#count-down-1,
+#lift-off {
+    font-family: monospace;
+    font-size: 72px;
+    position: relative;
+    visibility: hidden;
+}
+
+@keyframes count-down-a {
+    from {
+        visibility: visible;
+        left: -56px;
+    }
+    to {
+        visibility: visible;
+        left: 0;
+    }
+}
+
+@keyframes count-down-b {
+    from {
+        visibility: visible;
+        left: 0;
+    }
+    to {
+        visibility: visible;
+        left: 156px;
+    }
+}
+
+.animate-count-down-3 {
+    animation: count-down-a 1s ease-out;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+.animate-count-down-2 {
+    animation: count-down-b 1s ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.animate-count-down-1 {
+    margin-left: 56px;
+    animation: count-down-a 1s ease-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.animate-lift-off {
+    animation: count-down-b 1s ease-out;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.message {
+    display: none;
+    font-size: 24px;
+}
+
+.tooltip {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.tooltip span {
+    display: inline-block;
+    width: 32px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.tooltip span:hover ~ div.content {
+    display: block;
+}
+
+.tooltip .content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 350px;
+    background-color: #f0f0f0;
+    padding: 24px 20px 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 22.8px -13px rgba(0, 0, 0, 0.02),
+        0px 0px 36.5px -13px rgba(0, 0, 0, 0.028),
+        0px 0px 43.8px -13px rgba(0, 0, 0, 0.035),
+        0px 0px 47.7px -13px rgba(0, 0, 0, 0.042),
+        0px 0px 52.6px -13px rgba(0, 0, 0, 0.05),
+        0px 0px 80px -13px rgba(0, 0, 0, 0.07);
+}
+
+.tooltip .content > ul > li {
+    margin-bottom: 8px;
+}
+
+.tooltip ul ul {
+    margin-left: 30px;
+}
+
+.tooltip li {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 1200px) {
+    .control-panel {
+        right: 24px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    body {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr;
+        place-items: center;
+    }
+
+    main {
+        display: none;
+    }
+
+    .message {
+        display: block;
+        font-weight: 500;
+        padding: 2rem;
+        border-radius: 1rem;
+        background: linear-gradient(to right, #64b3f4, #c2e59c);
+    }
+}

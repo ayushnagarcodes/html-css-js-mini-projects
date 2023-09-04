@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    color: #274867;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6.4rem 4rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 3.6rem;
+    font-size: 4.8rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+section > div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+input {
+    width: 30rem;
+    padding: 0.6rem 1.2rem;
+    font: inherit;
+    color: inherit;
+    outline: none;
+    border: 2px solid #007bff;
+    border-radius: 0.4rem;
+}
+
+.button-container button:first-child {
+    margin-right: 1.6rem;
+}
+
+button {
+    background-color: #007bff;
+    padding: 0.6rem 1.2rem;
+    font: inherit;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+ol {
+    margin-top: 4.8rem;
+    padding: 2.8rem 4.8rem;
+    text-align: left;
+    background-color: #cce5ff;
+    border-radius: 0.8rem;
+    list-style: none;
+    list-style-position: outside;
+    counter-reset: none;
+}
+
+ol li {
+    position: relative;
+    counter-increment: item;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    padding-left: 1rem;
+}
+
+ol li::before {
+    position: absolute;
+    left: -3rem;
+    top: 6px;
+    margin-right: 1.4rem;
+    content: counter(item);
+    display: inline-block;
+    width: 2.5rem;
+    background: #2888ff;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+}
+
+ol input {
+    width: 10rem;
+}
+
+ol button {
+    margin-left: 1.4rem;
+}
+
+a {
+    color: #0015ff;
+}
+
+.error {
+    margin-top: 3.6rem;
+}
+
+.tooltip {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+}
+
+.tooltip span {
+    display: inline-block;
+    width: 3.2rem;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.tooltip span:hover ~ div.content {
+    display: block;
+}
+
+.tooltip .content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 35rem;
+    background-color: #fff;
+    padding: 2.4rem 2rem 2rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 22.8px -13px rgba(0, 0, 0, 0.02),
+        0px 0px 36.5px -13px rgba(0, 0, 0, 0.028),
+        0px 0px 43.8px -13px rgba(0, 0, 0, 0.035),
+        0px 0px 47.7px -13px rgba(0, 0, 0, 0.042),
+        0px 0px 52.6px -13px rgba(0, 0, 0, 0.05),
+        0px 0px 80px -13px rgba(0, 0, 0, 0.07);
+}
+
+.tooltip .content > ul > li {
+    margin-bottom: 8px;
+}
+
+.tooltip ul ul {
+    margin-left: 30px;
+}
+
+.tooltip li {
+    line-height: 1.4;
+}

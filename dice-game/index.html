@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <title>Dice Game</title>
+    </head>
+    <body>
+        <main>
+            <div id="player-1" class="player active">
+                <div class="player-info">
+                    <p class="player-name">PLAYER 1</p>
+                    <p class="score-total">0</p>
+                </div>
+                <div class="score-container">
+                    <p>Current</p>
+                    <p class="score-dice">0</p>
+                </div>
+            </div>
+
+            <div id="player-2" class="player">
+                <div class="player-info">
+                    <p class="player-name">PLAYER 2</p>
+                    <p class="score-total">0</p>
+                </div>
+                <div class="score-container">
+                    <p>Current</p>
+                    <p class="score-dice">0</p>
+                </div>
+            </div>
+
+            <button id="reload-btn" class="common-styles-1">🔄 NEW GAME</button>
+
+            <img class="dice-image common-styles-1" src="" alt="dice image" />
+
+            <button id="roll-dice-btn" class="common-styles-1">
+                🎲 ROLL DICE
+            </button>
+
+            <button id="hold-btn" class="common-styles-1">📥 HOLD</button>
+        </main>
+
+        <div class="tooltip">
+            <span
+                ><img src="./images/help-circle-outline.svg" alt="tooltip"
+            /></span>
+            <div class="content">
+                <ul>
+                    <li>Hold points to increase your score.</li>
+                    <li>You will lose your turn if you get '1' on the dice.</li>
+                    <li>The one who hits 100 points first, wins!</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

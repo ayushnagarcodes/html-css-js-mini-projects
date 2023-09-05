@@ -1,0 +1,262 @@
+:root {
+    --ff-primary: "Nunito", sans-serif;
+
+    --fs-400: 1.8rem;
+    --fs-600: 3.4rem;
+    --fs-700: 4rem;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --linear-gradient: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+
+    --clr-primary-000: #c7365f;
+    --clr-accent-win: rgba(255, 215, 65, 0.82);
+
+    --clr-neutral-000: #e9e9e9;
+    --clr-neutral-100: #333;
+
+    --box-shadow-400: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+    --box-shadow-500: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+
+    --br-400: 0.9rem;
+}
+
+/*****************/
+/* Reset default */
+/*****************/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100svh;
+    padding: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--linear-gradient);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-100);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+button {
+    padding: 1rem 2.4rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: var(--lh-400);
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+main {
+    position: relative;
+    width: 100rem;
+    height: 60rem;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: var(--br-400);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: var(--box-shadow-500);
+}
+
+.player {
+    padding: 9rem;
+    opacity: 0.8;
+    transition: 0.5s ease-in-out;
+}
+
+.player.active {
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.player-info {
+    margin-bottom: 12rem;
+}
+
+.player-name {
+    margin-bottom: 1rem;
+    font-size: var(--fs-700);
+    word-spacing: 0.4rem;
+}
+
+.player.active .player-name {
+    font-weight: var(--fw-600);
+}
+
+.score-total {
+    font-size: 8rem;
+    color: var(--clr-primary-000);
+}
+
+.score-container {
+    margin: 0 auto;
+    max-width: 21rem;
+    padding: 2rem;
+    background-color: var(--clr-primary-000);
+    border-radius: var(--br-400);
+    color: var(--clr-neutral-000);
+}
+
+.score-dice {
+    margin-top: 0.8rem;
+    font-size: var(--fs-600);
+}
+
+.common-styles-1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--box-shadow-400);
+}
+
+#reload-btn {
+    top: 6%;
+}
+
+.dice-image {
+    visibility: hidden;
+    top: 27%;
+    height: 10rem;
+    width: 10rem;
+}
+
+#roll-dice-btn {
+    bottom: 27%;
+}
+
+#hold-btn {
+    bottom: 16%;
+}
+
+.tooltip {
+    text-align: left;
+    text-transform: none;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+}
+
+.tooltip span {
+    display: inline-block;
+    width: 3.2rem;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.tooltip span:hover ~ div.content {
+    display: block;
+}
+
+.tooltip .content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 35rem;
+    background-color: #e8e8e8;
+    padding: 2.4rem 2rem 2rem 4rem;
+    border-radius: 1.4rem;
+    box-shadow: 0px 0px 22.8px -13px rgba(0, 0, 0, 0.02),
+        0px 0px 36.5px -13px rgba(0, 0, 0, 0.028),
+        0px 0px 43.8px -13px rgba(0, 0, 0, 0.035),
+        0px 0px 47.7px -13px rgba(0, 0, 0, 0.042),
+        0px 0px 52.6px -13px rgba(0, 0, 0, 0.05),
+        0px 0px 80px -13px rgba(0, 0, 0, 0.07);
+}
+
+.tooltip .content > ul > li {
+    margin-bottom: 8px;
+}
+
+.tooltip ul ul {
+    margin-left: 30px;
+}
+
+.tooltip li {
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 55%;
+    }
+
+    body {
+        padding-top: 7.2rem;
+        line-height: 1;
+    }
+
+    main {
+        width: 50rem;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .player {
+        height: calc((100svh - 2.8rem - 7.2rem) / 2);
+        padding: 2.8rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        gap: 1.4rem;
+    }
+
+    .player-info {
+        margin-bottom: 0;
+    }
+
+    .common-styles-1 {
+        left: 0;
+        transform: translateX(-50%);
+    }
+
+    button {
+        background-color: #fff;
+    }
+
+    #reload-btn {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .dice-image {
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+
+    #roll-dice-btn {
+        min-width: 17rem;
+        bottom: auto;
+        top: 42%;
+        left: 70%;
+    }
+
+    #hold-btn {
+        min-width: 13rem;
+        bottom: auto;
+        top: 52%;
+        left: 70%;
+    }
+}

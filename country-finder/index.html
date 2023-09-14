@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Country Finder</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="slider">
+                <section class="container form-container">
+                    <form class="form">
+                        <input
+                            id="latitude"
+                            type="text"
+                            placeholder="Latitude"
+                        />
+                        <input
+                            id="longitude"
+                            type="text"
+                            placeholder="Longitude"
+                        />
+                        <button id="find-me-btn" type="button">Find me</button>
+                        <button id="submit-btn" type="submit">Locate</button>
+                    </form>
+
+                    <div class="examples">
+                        <p>Examples</p>
+                        <ul>
+                            <li>
+                                Format: Latitude [-90, 90], Longitude [-180,
+                                180]
+                            </li>
+                            <li>Coordinates 1: 52.508, 13.381</li>
+                            <li>Coordinates 2: 19.037, 72.873</li>
+                            <li>Coordinates 3: -33.933, 18.474</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="container card-container">
+                    <button id="back-btn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="#fff"
+                            class="w-6 h-6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M15.75 19.5L8.25 12l7.5-7.5"
+                            />
+                        </svg>
+                        Back
+                    </button>
+                </section>
+            </div>
+
+            <div class="error-popup hidden">
+                <span>Wrong input values!</span><img src="icons/x.svg" />
+            </div>
+        </main>
+    </body>
+</html>

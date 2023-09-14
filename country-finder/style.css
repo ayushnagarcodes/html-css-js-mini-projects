@@ -1,0 +1,272 @@
+:root {
+    --clr-primary: #282828;
+    --clr-secondary: #e5e5e5;
+}
+
+/*****************/
+/* Reset default */
+/*****************/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    color: var(--clr-primary);
+    font-weight: 300;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+button {
+    background-color: var(--clr-primary);
+    padding: 0.3rem 2rem;
+    outline: transparent;
+    border: 2px solid var(--clr-primary);
+    color: var(--clr-secondary);
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--clr-primary);
+    transition: 0.3s ease-out;
+}
+
+input {
+    padding: 0.6rem 1.2rem 1rem 0.2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--clr-primary);
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    font-weight: 300;
+}
+
+/*****************/
+/* Main */
+/*****************/
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: 0.5s ease-out;
+}
+
+.slider.active {
+    transform: translateX(-100%);
+    transition: 0.5s ease-out;
+}
+
+.slider.active .form-container {
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.slider.active .card-container {
+    opacity: 1;
+    transition: 0.2s ease-out;
+}
+
+.container {
+    position: relative;
+    min-width: 100%;
+    min-height: 100svh;
+    padding: 4.8rem;
+}
+
+.form-container {
+    display: grid;
+    place-items: center;
+    row-gap: 6rem;
+    transition: 0.5s ease-out;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+    align-self: self-end;
+}
+
+.form input {
+    grid-column: span 2;
+}
+
+.examples > p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding-bottom: 0.6rem;
+}
+
+.examples li {
+    font-size: 1.4rem;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.card {
+    margin: 0 auto;
+    max-width: 90rem;
+    max-height: 30rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 0.6fr;
+    gap: 2rem 4.8rem;
+    justify-content: center;
+}
+
+.country-flag {
+    height: 100%;
+    grid-row: span 2;
+    justify-self: end;
+}
+
+.card p {
+    font-size: 1.6rem;
+}
+
+.country-name {
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+}
+
+#back-btn {
+    position: absolute;
+    top: 4rem;
+    right: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding-left: 1.8rem;
+}
+
+#back-btn svg {
+    height: 2.2rem;
+    width: 2.2rem;
+    transition: 0.3s ease-out;
+}
+
+#back-btn:hover svg {
+    stroke: #282828;
+    transition: 0.3s ease-out;
+}
+
+/*****************/
+/* Error popup */
+/*****************/
+
+.error-popup {
+    position: absolute;
+    top: 2.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: fit-content;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    opacity: 1;
+    transition: 0.3s ease-out;
+}
+
+.error-popup.hidden {
+    transform: translate(-50%, -8rem);
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.error-popup img {
+    height: 1.7rem;
+    width: 1.7rem;
+    cursor: pointer;
+}
+
+/*****************/
+/* ;Media queries */
+/*****************/
+
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 55%;
+    }
+
+    .card {
+        min-height: 80%;
+        grid-template-columns: 35rem;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .country-flag {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        grid-row: span 1;
+        justify-self: start;
+    }
+
+    #back-btn {
+        top: auto;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}

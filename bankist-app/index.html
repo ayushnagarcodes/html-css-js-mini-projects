@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./images/icon.png" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+            rel="stylesheet"
+        />
+        <title>Home | Bankist</title>
+    </head>
+    <body>
+        <header>
+            <!-- NAV -->
+            <nav>
+                <p class="greet">Log in to get started</p>
+                <a href="#"
+                    ><img class="logo" src="./images/logo.png" alt="logo"
+                /></a>
+                <form class="login">
+                    <input
+                        id="login__input--user"
+                        class="login__input"
+                        type="text"
+                        placeholder="User"
+                    />
+                    <div>
+                        <input
+                            id="login__input--pin"
+                            class="login__input"
+                            type="text"
+                            maxlength="4"
+                            placeholder="PIN"
+                        />
+                        <button id="login__btn">&rarr;</button>
+                    </div>
+                </form>
+            </nav>
+        </header>
+
+        <main class="app">
+            <!-- Balance -->
+            <section class="balance">
+                <div>
+                    <p class="balance__label">Current balance</p>
+                    <p class="balance__date">
+                        As of <span>04/05/2023, 10:00 AM</span>
+                    </p>
+                </div>
+                <p class="balance__amount">₹0.00</p>
+            </section>
+
+            <!-- MOVEMENTS -->
+            <section class="movements"></section>
+
+            <!-- TRANSACT -->
+            <section class="transact">
+                <!-- TRANSFER MONEY -->
+                <div class="transact__row transact__transfer">
+                    <h2 class="transact__label">Transfer money</h2>
+                    <form action="" class="transact__transfer--form">
+                        <div class="transact__input--div">
+                            <input
+                                id="transact__transfer--to"
+                                class="transact__input"
+                                type="text"
+                            />
+                            <label
+                                for="transact__transfer--to"
+                                class="transact__input--label"
+                                >Transfer to</label
+                            >
+                        </div>
+                        <div class="transact__input--div">
+                            <input
+                                id="transact__transfer--amount"
+                                class="transact__input"
+                                type="number"
+                            />
+                            <label
+                                for="transact__transfer--amount"
+                                class="transact__input--label"
+                                >Amount</label
+                            >
+                        </div>
+                        <button
+                            id="transact__transfer--btn"
+                            class="transact__btn"
+                        >
+                            &rarr;
+                        </button>
+                    </form>
+                </div>
+
+                <!-- REQUEST LOAN -->
+                <div class="transact__row transact__request">
+                    <h2 class="transact__label">Request loan</h2>
+                    <form action="" class="transact__request--form">
+                        <div class="transact__input--div">
+                            <input
+                                id="transact__request--amount"
+                                class="transact__input"
+                                type="number"
+                            />
+                            <label
+                                for="transact__request--amount"
+                                class="transact__input--label"
+                                >Amount</label
+                            >
+                        </div>
+                        <button
+                            id="transact__request--btn"
+                            class="transact__btn"
+                        >
+                            &rarr;
+                        </button>
+                    </form>
+                </div>
+
+                <!-- CLOSE ACCOUNT -->
+                <div class="transact__row transact__close">
+                    <h2 class="transact__label">Close account</h2>
+                    <form action="" class="transact__close--form">
+                        <div class="transact__input--div">
+                            <input
+                                id="transact__close--user"
+                                class="transact__input"
+                                type="text"
+                            />
+                            <label
+                                for="transact__close--user"
+                                class="transact__input--label"
+                                >Confirm user</label
+                            >
+                        </div>
+                        <div class="transact__input--div">
+                            <input
+                                id="transact__close--pin"
+                                class="transact__input"
+                                type="text"
+                                maxlength="4"
+                            />
+                            <label
+                                for="transact__close--pin"
+                                class="transact__input--label"
+                                >Confirm PIN</label
+                            >
+                        </div>
+                        <button id="transact__close--btn" class="transact__btn">
+                            &rarr;
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- SUMMARY -->
+            <section class="summary">
+                <p class="summary__label">
+                    IN<span class="summary__amount summary__amount--in"
+                        >₹0.00</span
+                    >
+                </p>
+                <p class="summary__label">
+                    OUT<span class="summary__amount summary__amount--out"
+                        >₹0.00</span
+                    >
+                </p>
+                <p class="summary__label">
+                    INTEREST<span
+                        class="summary__amount summary__amount--interest"
+                        >₹0.00</span
+                    >
+                </p>
+                <button id="summary__sort--btn">&darr; SORT</button>
+            </section>
+
+            <!-- LOGOUT TIMER -->
+            <section class="logout-timer">
+                <p>
+                    You will be logged out in <span class="timer">10:00</span>
+                </p>
+            </section>
+        </main>
+
+        <div class="info">
+            <ul>
+                <li>
+                    Use the following credentials to log in and perform actions
+                    ➡️
+                    <ul>
+                        <li>an : 1111</li>
+                        <li>jd : 2222</li>
+                        <li>stw : 3333</li>
+                    </ul>
+                </li>
+                <li>
+                    It uses Intl API for internationalization of currencies and
+                    dates.
+                </li>
+                <li>It automatically logs out after 2 minutes.</li>
+                <li>Reloading the page will reset the data.</li>
+            </ul>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

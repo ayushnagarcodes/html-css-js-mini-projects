@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cuisinoir - Delicious Recipes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="./images/favicon.png" />
+        <script defer src="./script.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img
+                    src="./images/logo-type.png"
+                    alt="cuisinoir logo"
+                    class="logo"
+                />
+                <div class="search-container">
+                    <input
+                        id="search"
+                        type="text"
+                        placeholder="Search a recipe or an ingredient"
+                    />
+                    <svg>
+                        <use href="./images/icons.svg#search-normal"></use>
+                    </svg>
+                </div>
+                <button type="button" id="show-bookmarks--btn">
+                    <svg>
+                        <use href="./images/icons.svg#bookmark-light"></use>
+                    </svg>
+                    <span>Bookmarks</span>
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="slider">
+                <div class="grid-container">
+                    <section class="section-styles meals-list"></section>
+                    <section class="section-styles recipe-details"></section>
+                </div>
+
+                <section class="bookmark-section section-styles">
+                    <h1>Your bookmarks,</h1>
+                    <div class="bookmarks-list"></div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

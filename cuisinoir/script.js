@@ -140,6 +140,25 @@ const renderBookmarksList = () => {
     );
 };
 
+// Changing grid-template-columns property of bookmarksList depending on no. of items & screen width
+const setBookmarksGrid = () => {
+    if (bookmarksData.length > 4) {
+        bookmarksList.style.gridTemplateColumns =
+            "repeat(auto-fit, minmax(20rem, 1fr))";
+    } else if (bookmarksData.length > 3 && window.innerWidth < 1070) {
+        bookmarksList.style.gridTemplateColumns =
+            "repeat(auto-fit, minmax(20rem, 1fr))";
+    } else if (bookmarksData.length > 2 && window.innerWidth < 700) {
+        bookmarksList.style.gridTemplateColumns =
+            "repeat(auto-fit, minmax(20rem, 1fr))";
+    } else if (bookmarksData.length > 1 && window.innerWidth < 500) {
+        bookmarksList.style.gridTemplateColumns =
+            "repeat(auto-fit, minmax(20rem, 1fr))";
+    } else {
+        bookmarksList.style.gridTemplateColumns = "repeat(auto-fit, 20rem)";
+    }
+};
+
 const renderRecipeDetails = () => {
     recipeDetailsContainer.innerHTML = "";
     const renderIngredients = (arr) => {
@@ -251,6 +270,8 @@ const renderRecipeDetails = () => {
 
             bookmarksList.innerHTML = "";
             renderBookmarksList();
+
+            setBookmarksGrid();
         } else {
             this.classList.add("fill");
 
@@ -259,14 +280,16 @@ const renderRecipeDetails = () => {
                 `${renderBookmark(tempRecipeDetails)}`
             );
 
-            // saving to localStorage
             bookmarksData.push({
                 id: tempRecipeDetails.id,
                 image_url: tempRecipeDetails.image_url,
                 title: tempRecipeDetails.title,
             });
+
+            setBookmarksGrid();
         }
 
+        // saving to localStorage
         localStorage.setItem("bookmarksData", JSON.stringify(bookmarksData));
     });
 };
@@ -425,6 +448,7 @@ addEventListener("load", () => {
     if (localStorage.getItem("bookmarksData")) {
         bookmarksData = JSON.parse(localStorage.getItem("bookmarksData"));
         renderBookmarksList();
+        setBookmarksGrid();
     }
 });
 
@@ -435,7 +459,7 @@ addEventListener("hashchange", () => {
 });
 
 searchBar.addEventListener("keydown", (event) => {
-    if (event.code === "Enter") {
+    if (event.key === "Enter") {
         getMealsList(searchBar.value);
     }
 });

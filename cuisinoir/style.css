@@ -176,7 +176,7 @@ nav {
 
 .logo {
     grid-area: logo;
-    height: 4.6rem;
+    width: 180px;
     cursor: pointer;
 }
 
@@ -268,7 +268,7 @@ main {
 
 .bookmarks-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-template-columns: repeat(auto-fit, 20rem);
     gap: var(--gap-500);
 }
 
@@ -632,6 +632,7 @@ main {
 
     .slider .bookmark-section {
         display: none;
+        min-height: 75svh;
     }
 
     .slider.active .bookmark-section {

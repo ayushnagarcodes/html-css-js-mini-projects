@@ -1,0 +1,205 @@
+:root {
+  --clr-base-400: #5e5e5e;
+  --clr-base-500: #494949;
+
+  --clr-ui-300: #f8e2ff;
+  --clr-ui-400: #580d3a;
+  --clr-ux-300: #e2ffea;
+  --clr-ux-400: #115926;
+  --clr-dev-300: #e2fcff;
+  --clr-dev-400: #024f4f;
+
+  --clr-accent-400: #7e47c5;
+
+  --ff-accent: "Podkova", serif;
+  --ff-base: "Open Sans", sans-serif;
+
+  --fs-300: 1.2rem;
+  --fs-400: 1.6rem;
+  --fs-500: 3.6rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --shadow: 0 .4rem 1.6rem rgba(0, 0, 0, 0.1);
+  --border-radius-300: 1.2rem;
+  --border-radius-400: 1.6rem;
+}
+
+
+
+/****************/
+/*RESET DEFAULT*/
+/****************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+
+/****************/
+/*CANDIDATE SECTION*/
+/****************/
+
+.candidates {
+  margin: 5.6rem 4.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: center;
+  gap: 1.6rem 3rem;
+}
+
+.candidate {
+  display: grid;
+  grid-template-areas: 
+  "img info"
+  "img bio"
+  "socials btn";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  gap: 1.4rem;
+
+  padding: 1.4rem;
+  background: #FFFFFF;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-400);
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-400);
+  color: var(--clr-base-400);
+}
+
+.candidate .image {
+  grid-area: img;
+  border-radius: var(--border-radius-300);
+}
+
+.candidate .info {
+  grid-area: info;
+  align-self: center;
+  margin-bottom: .4rem;
+}
+
+.candidate .info .name {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-500);
+  line-height: 1.2;
+  color: var(--clr-base-500);
+}
+
+.candidate .info .roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
+  line-height: 1;
+}
+
+.candidate .info .roles span {
+  border-radius: 4rem;
+  padding: .8rem 1.2rem;
+}
+
+.candidate .info .roles .ui {
+  background: var(--clr-ui-300);
+  color: var(--clr-ui-400);
+}
+
+.candidate .info .roles .ux {
+  background: var(--clr-ux-300);
+  color: var(--clr-ux-400);
+}
+
+.candidate .info .roles .dev {
+  background: var(--clr-dev-300);
+  color: var(--clr-dev-400);
+}
+
+.candidate .bio {
+  grid-area: bio;
+  line-height: 2.6rem;
+}
+
+.candidate .socials {
+  grid-area: socials;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.candidate .socials a {
+  display: grid;
+  place-items: center;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.candidate > button {
+  grid-area: btn;
+  justify-self: flex-end;
+
+  padding: 1rem 3.6rem;
+  border: none;
+  border-radius: var(--border-radius-300);
+  background: var(--clr-accent-400);
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-400);
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+
+  cursor: pointer;
+}
+
+
+
+/****************/
+/*MEDIA QUERIES*/
+/****************/
+
+@media (max-width: 1150px) {
+  .candidates {
+    grid-template-columns: .7fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .candidates {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 55%;
+  }
+
+  .candidate {
+    grid-template-areas: 
+      "img info"
+      "bio bio"
+      "socials btn";
+  }
+
+  .candidate .image {
+    width: 140px;
+  }
+}

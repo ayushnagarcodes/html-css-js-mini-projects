@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" type="text/css" />
+        <title>Form 01</title>
+    </head>
+    <body>
+        <main>
+            <section id="personal-data">
+                <h1 id="personal-data-header">Personal data</h1>
+                <form id="personal-data-form">
+                    <div class="input-div">
+                        <label id="animal-label" for="animal-select"
+                            >Animal</label
+                        >
+                        <select id="animal-select">
+                            <option>Select your animal</option>
+                            <option>Dog</option>
+                            <option>Cat</option>
+                            <option>Bird</option>
+                            <option>Fish</option>
+                            <option>Rabbit</option>
+                        </select>
+                    </div>
+
+                    <div class="input-div">
+                        <label id="breed-label" for="breed-input">Breed</label>
+                        <input
+                            id="breed-input"
+                            class="text-input"
+                            type="text"
+                            placeholder="Type your pet’s breed"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-div">
+                        <label id="name-label" for="name-input">Name</label>
+                        <input
+                            id="name-input"
+                            class="text-input"
+                            type="text"
+                            placeholder="Type your pet’s name"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-div">
+                        <label id="owner-label" for="owner-input">Owner</label>
+                        <input
+                            id="owner-input"
+                            class="text-input"
+                            type="text"
+                            placeholder="Type your pet’s owner"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-div">
+                        <label id="country-label" for="country-select"
+                            >Country</label
+                        >
+                        <select id="country-select" required>
+                            <option>Select your country</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                            <option>China</option>
+                            <option>France</option>
+                            <option>South Africa</option>
+                            <option>New Zealand</option>
+                        </select>
+                    </div>
+
+                    <div class="input-div">
+                        <label id="birthday-label" for="birthday-input"
+                            >Birthday</label
+                        >
+                        <input
+                            id="birthday-input"
+                            class="text-input"
+                            type="date"
+                            placeholder="Type your pet's birthday"
+                            required
+                        />
+                    </div>
+
+                    <div class="input-div">
+                        <label id="gender-label" for="gender-select"
+                            >Gender</label
+                        >
+                        <select id="gender-select">
+                            <option>Select your pet’s gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-div">
+                        <label id="image-label" for="image-input">Image</label>
+                        <input id="image-input" type="file" required />
+                    </div>
+
+                    <div class="input-div text-area">
+                        <label id="about-label" for="about-text-area"
+                            >About your pet</label
+                        >
+                        <textarea
+                            id="about-text-area"
+                            placeholder="Write a short description"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="input-div">
+                        <label id="hobby-label" for="hobby-input">Hobby</label>
+                        <input
+                            id="hobby-input"
+                            class="text-input"
+                            type="text"
+                            placeholder="Type your pet’s hobby"
+                            required
+                        />
+                    </div>
+
+                    <button id="save-data-button" type="submit">
+                        Save data
+                    </button>
+                </form>
+            </section>
+
+            <section id="settings-section">
+                <h1 id="settings-header">Settings</h1>
+                <form id="settings-form">
+                    <div class="input-div">
+                        <label id="email-label" for="email-input">Email</label>
+                        <input
+                            class="text-input"
+                            id="email-input"
+                            type="email"
+                            placeholder="example@mail.com"
+                            required
+                        />
+                    </div>
+
+                    <button type="button" id="save-email-btn">
+                        Save email
+                    </button>
+
+                    <div class="input-div">
+                        <label id="phone-label" for="phone-input"
+                            >Phone number</label
+                        >
+                        <input
+                            class="text-input"
+                            id="phone-input"
+                            type="tel"
+                            placeholder="+48 123 456 789"
+                            required
+                        />
+                    </div>
+
+                    <button type="button" id="save-phone-btn">
+                        Save phone
+                    </button>
+
+                    <div class="input-div">
+                        <label id="password-label" for="password-input"
+                            >Password</label
+                        >
+                        <input
+                            class="text-input"
+                            id="password-input"
+                            type="password"
+                            placeholder="**********"
+                            required
+                        />
+                    </div>
+
+                    <button type="button" id="save-password-btn">
+                        Save password
+                    </button>
+
+                    <div class="input-div input-checkbox">
+                        <input
+                            id="notifications-checkbox"
+                            type="checkbox"
+                            required
+                        />
+                        <label for="notifications-checkbox"
+                            >I agree to receive notifications to my email</label
+                        >
+                    </div>
+
+                    <div class="input-div input-checkbox">
+                        <input
+                            id="third-parties-checkbox"
+                            type="checkbox"
+                            required
+                        />
+                        <label for="third-parties-checkbox"
+                            >I agree to receive a newsletter with information
+                            about products and services from third
+                            parties</label
+                        >
+                    </div>
+
+                    <button id="save-settings-button" type="submit">
+                        Save settings
+                    </button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

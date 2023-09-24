@@ -1,0 +1,263 @@
+:root {
+  --primary-color: #FFF;
+  --secondary-color: #4E4E4E;
+  --accent-color: #00A1AB;
+
+  --gradient-light-A: #E5E3E8;
+  --gradient-light-B: #FAFAFA;
+
+  --gradient-accent-A: #00A1AB;
+  --gradient-accent-B: #3741A0;
+}
+
+
+
+/****************/
+/*RESET DEFAULT*/
+/****************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+}
+
+
+
+
+
+/****************/
+/*GENERAL + HELPER CLASS (or UTILITY CLASS)*/
+/****************/
+
+main {
+  margin: 2.8rem;
+}
+
+.section-header {
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--accent-color);
+}
+
+.card-light {
+  background: linear-gradient(333.85deg, var(--gradient-light-A) 0.88%, var(--gradient-light-B) 99.09%);
+  color: var(--secondary-color);
+}
+
+.card-accent {
+  background: linear-gradient(333.85deg, var(--gradient-accent-A) 0.88%, var(--gradient-accent-B) 99.09%);
+  color: var(--primary-color);
+}
+
+.card-dark {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+
+
+/****************/
+/*PRICING SECTION*/
+/****************/
+
+.pricing {
+  width: fit-content;
+  margin: 4.8rem auto 18rem;
+  text-align: center;
+}
+
+.price-card-container {
+  margin: 4.8rem 0 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-card {
+  flex-basis: 260px;
+  height: fit-content;
+  padding: 32px;
+  border-radius: 10px;
+}
+
+.price-card:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+
+.price-card:nth-child(2) {
+  flex-basis: 280px;
+  padding: 56px 32px;
+}
+
+.price-card:nth-child(3) {
+  border-radius: 0 10px 10px 0;
+}
+
+.price-card__title {
+  margin-bottom: 2.4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.price-card__price {
+  margin-bottom: 2.4rem;
+  font-weight: 900;
+  font-size: 4.8rem;
+  line-height: 1.1;
+}
+
+.price-card.card-light > .price-card__price {
+  color: var(--accent-color);
+}
+
+.price-card__price span {
+  display: block;
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+
+.price-card__description {
+  margin-bottom: 3.6rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.pricing__btn {
+  padding: 1rem;
+  border: none;
+  border-radius: .6rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.08rem;
+  cursor: pointer;
+}
+
+.price-card.card-light > .pricing__btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.price-card.card-accent > .pricing__btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.price-card.card-dark > .pricing__btn {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.pricing > .pricing__btn {
+  margin-top: 1rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+
+
+/****************/
+/*TEAM SECTION*/
+/****************/
+
+.team {
+  width: fit-content;
+  margin: 0 auto 18rem;
+  text-align: center;
+}
+
+.team-card-container {
+  margin: 6.4rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem 5.6rem;
+}
+
+.team-card {
+  padding: 1rem;
+  border-radius: 1.6rem;
+  flex-basis: 48rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.team-card.card-light {
+  text-align: right;
+}
+
+.team-card.card-dark {
+  text-align: left;
+  flex-direction: row-reverse;
+}
+
+.team-card__name {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.team-card.card-light .team-card__name {
+  color: var(--accent-color);
+}
+
+.team-card__role {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  opacity: .8;
+}
+
+.team-card__description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-inline-size: 24rem;
+}
+
+.team-card__image {
+  max-width: 16rem;
+  border-radius: 1.2rem;
+}
+
+
+
+/****************/
+/*MEDIA QUERIES*/
+/****************/
+
+@media (max-width: 980px) {
+  .price-card-container {
+    gap: 2.4rem;
+  }
+
+  .price-card:nth-child(1) {
+    border-radius: 1rem;
+  }
+  
+  .price-card:nth-child(3) {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+}

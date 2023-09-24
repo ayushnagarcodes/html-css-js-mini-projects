@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  padding: 72px;
+  background: linear-gradient(to bottom, rgba(253, 191, 109, 0.477), rgba(255, 122, 255, 0.559));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(28, 28, 40);
+  border-radius: 28px;
+  gap: 24px;
+  cursor: default;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.card img {
+  width: 200px;
+  height: auto;
+  z-index: 2;
+  animation: card-img 3s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes card-img {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.card .card-heading {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1em;
+  z-index: 2;
+}
+
+.card .card-description {
+  color: rgb(108, 124, 152);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.1em;
+  z-index: 2;
+}
+
+.card .hover-effect {
+  position: absolute;
+  top: -64px;
+  width: 75%;
+  height: 100%;
+  z-index: 1;
+}
+
+.card .hover-effect span {
+  width: 100%;
+  height: 35px;
+  display: block;
+  background: linear-gradient(90deg, rgb(231, 75, 231),rgb(236, 227, 70));
+  border-radius: 24px;
+  transform: rotate(-25deg);
+  z-index: 1;
+  margin-bottom: 32px;
+  opacity: 0;
+}
+
+.card:hover .hover-effect span {
+  animation: hover-animate .8s ease-in-out 2;
+  animation-delay: calc(var(--i) * .1s);
+}
+
+@keyframes hover-animate {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: .1;
+  }
+  40% {
+    opacity: .3;
+  }
+  60% {
+    opacity: .7;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1043px) {
+  body {
+    height: auto;
+    padding: 36px;
+  }
+}

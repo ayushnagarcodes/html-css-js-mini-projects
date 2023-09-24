@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
 /*****************/
 /* Reset default */
 /*****************/
@@ -80,4 +82,13 @@ h1.main-heading {
     overflow: hidden;
     display: grid;
     place-items: center;
+}
+
+/************************/
+/* Custom cards styling */
+/************************/
+
+#image-slider-01 img {
+    height: 52%;
+    transform: translateY(-52%);
 }

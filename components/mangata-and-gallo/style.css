@@ -1,0 +1,241 @@
+:root {
+    --ff-primary: "Playfair Display", serif;
+    --ff-secondary: "Oxygen", sans-serif;
+
+    --fs-300: 1.6rem;
+    --fs-400: 1.8rem;
+    --fs-500: 2rem;
+    --fs-600: 3rem;
+    --fs-700: 4.4rem;
+
+    --lh-400: 1;
+    --lh-500: 1.2;
+    --lh-600: 1.6;
+
+    --clr-primary: #fff5e0;
+    --clr-secondary: #141e46;
+    --clr-accent: #968c69;
+    --clr-neutral-000: #000000;
+    --clr-neutral-100: #f2f2f2;
+
+    --br-400: 1.6rem;
+    --br-500: 2.4rem;
+
+    --overlay: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.1)
+    );
+}
+
+/*****************/
+/* Reset default */
+/*****************/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100svh;
+    max-width: 144rem;
+    margin: 0 auto;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-000);
+    background-color: var(--clr-primary);
+    padding: 4rem 4rem;
+}
+
+h1,
+h2 {
+    font-family: var(--ff-primary);
+    margin-bottom: 2.8rem;
+}
+
+h1 {
+    font-size: var(--fs-700);
+}
+
+h2 {
+    font-size: var(--fs-600);
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    outline: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: var(--lh-400);
+    cursor: pointer;
+}
+
+/*****************/
+/* Header */
+/*****************/
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.header-logo {
+    max-width: 50%;
+}
+
+nav {
+    min-width: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    font-size: var(--fs-500);
+}
+
+nav li {
+    position: relative;
+}
+
+nav li::before {
+    content: "";
+    height: 3px;
+    width: 0;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--clr-accent);
+    transition: 0.2s ease-in;
+}
+
+nav li:hover::before {
+    width: 110%;
+    transition: 0.2s ease-out;
+}
+
+/*****************/
+/* Main */
+/*****************/
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-bottom: 8rem;
+}
+
+main p {
+    line-height: var(--lh-600);
+}
+
+.promotion {
+    padding: 6rem 6rem;
+    height: fit-content;
+    background: var(--overlay), url(./images/jewellery-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--clr-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: var(--br-500);
+}
+
+.promotion p {
+    max-width: 50rem;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(34rem, auto));
+    gap: 4rem;
+}
+
+.services .card {
+    height: 52rem;
+    padding: 6rem;
+    color: var(--clr-primary);
+    border-radius: var(--br-400);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    cursor: default;
+    transition: 0.2s ease-in;
+}
+
+.services .card:hover {
+    transform: translate(0, -10px);
+    transition: 0.2s ease-out;
+}
+
+.services .card:nth-child(1) {
+    background: var(--overlay), url(./images/jewellery-01.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.services .card:nth-child(2) {
+    background: var(--overlay), url(./images/jewellery-02.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.services .card:nth-child(3) {
+    background: var(--overlay), url(./images/jewellery-03.jpg) no-repeat center;
+    background-size: cover;
+}
+
+/*****************/
+/* Footer */
+/*****************/
+
+footer {
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    height: 6rem;
+}
+
+/*****************/
+/* Media Queries */
+/*****************/
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 55%;
+    }
+}

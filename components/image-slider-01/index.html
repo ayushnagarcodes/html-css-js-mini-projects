@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css" type="text/css" />
+        <link rel="stylesheet" href="" type="text/css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:regular,500,600"
+            rel="stylesheet"
+        />
+        <title>Image Gallery Slider 01</title>
+    </head>
+    <body>
+        <div class="card-main">
+            <img src="./images/img1.jpg" alt="image 1" />
+            <div class="card-content">
+                <p class="card-title">Ornament Vase</p>
+                <p class="card-category">Modern</p>
+            </div>
+        </div>
+
+        <div class="card-slider">
+            <div id="card-1" class="container">
+                <img src="./images/img1.jpg" alt="image 1" />
+            </div>
+            <div id="card-2" class="container">
+                <img src="./images/img2.jpg" alt="image 2" />
+            </div>
+            <div id="card-3" class="container">
+                <img src="./images/img3.jpg" alt="image 3" />
+            </div>
+            <div id="card-4" class="container">
+                <img src="./images/img4.jpg" alt="image 4" />
+            </div>
+            <div id="card-5" class="container">
+                <img src="./images/img5.jpg" alt="image 5" />
+            </div>
+            <button class="left-arrow">
+                <ion-icon name="chevron-back-circle-outline"></ion-icon>
+            </button>
+            <button class="right-arrow">
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </button>
+            <div class="card-count">
+                <span class="card-count--current">1</span>/<span
+                    class="card-count--total"
+                    >5</span
+                >
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
+</html>

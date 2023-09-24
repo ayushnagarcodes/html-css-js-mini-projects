@@ -1,0 +1,59 @@
+/****************/
+/*Hero Section*/
+/****************/
+
+header {
+  height: 45rem;
+  background-image: url(img/hero.jpg);
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero article h1 {
+  margin-bottom: 3.4rem;
+  font-size: 5.6rem;
+  font-weight: var(--fw-500);
+  line-height: 1.15;
+}
+
+.hero article p {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-300);
+  margin-bottom: 2.4rem;
+  color: var(--clr-neutral-500);
+}
+
+/****************/
+/*Blog Section*/
+/****************/
+
+.blog {
+  background-color: var(--clr-primary-300);
+  border-radius: var(--br);
+}
+
+.blog .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
+.blog .card {
+  width: 24rem;
+}
+
+/****************/
+/*Media Queries*/
+/****************/
+
+@media (max-width: 650px) {
+  .blog .card {
+    width: 100%;
+  }
+
+  .blog .card img {
+    height: 27rem;
+  }
+}

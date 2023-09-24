@@ -1,0 +1,122 @@
+/****************/
+/*Hero Section*/
+/****************/
+
+header {
+  height: 55rem;
+  background-image: url(img/blog.jpg);
+  background-position: 100% 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header > p {
+  max-width: 60rem;
+  font-family: inherit;
+  font-size: 7.2rem;
+  color: var(--clr-neutral-900);
+  font-weight: var(--fw-300);
+  padding: 12rem 5%;
+  line-height: 110%;
+}
+
+/****************/
+/*Blog Section*/
+/****************/
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.blog-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem 4.8rem;
+  font-weight: var(--fw-500);
+}
+
+.blog-nav span {
+  cursor: pointer;
+}
+
+.blog-nav span:last-of-type {
+  margin-right: auto;
+}
+
+.blog .container-1 > .card > a,
+.blog .container-2,
+.blog .container-3 {
+  display: grid;
+  gap: 4rem;
+}
+
+.blog .container-1 > .card > a {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.blog .container-1 > .card img {
+  height: 28rem;
+}
+
+.blog .container-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.blog .container-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/****************/
+/*Media Queries*/
+/****************/
+
+@media (max-width: 1000px) {
+  header > p {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 850px) {
+  header {
+    height: 64rem;
+    background-position: 100% 120%;
+    background-size: 120%;
+  }
+
+  header > p {
+    padding-top: 6rem;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    height: 70rem;
+    background-position: 80% 10rem;
+    background-size: cover;
+  }
+
+  header > p {
+    font-size: 5.5rem;
+    max-width: 40rem;
+    padding-top: 6rem;
+  }
+
+  .blog {
+    gap: 2rem;
+  }
+
+  .blog .container-1 > .card > a,
+  .blog .container-2,
+  .blog .container-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .blog .card img {
+    height: 27rem;
+  }
+}

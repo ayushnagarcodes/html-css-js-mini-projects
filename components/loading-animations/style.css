@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100svh;
+    padding: 48px 24px;
+}
+
+h1 {
+    margin-bottom: 48px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 48px;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Common */
+.loader {
+    position: relative;
+    min-height: 200px;
+    min-width: 200px;
+    padding: 30px;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+/* Loader 01 */
+.container .loader-01 div {
+    position: relative;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    background: conic-gradient(rgb(0, 132, 255) 60deg, #555 60deg);
+    display: grid;
+    place-items: center;
+}
+
+.container .loader-01 div::after {
+    content: "";
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.container .loader-01:hover div {
+    animation: rotate 1.5s linear infinite;
+}
+
+/* Loader 02 */
+.container .loader-02 div {
+    position: relative;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    background: conic-gradient(transparent, #0084ff);
+    display: grid;
+    place-items: center;
+}
+
+.container .loader-02 div::after {
+    content: "";
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.container .loader-02:hover div {
+    animation: rotate 1.5s linear infinite;
+}
+
+/* Loader 03 */
+.container .loader-03 div {
+    position: relative;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    background: #555;
+}
+
+.container .loader-03 div::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.container .loader-03 div::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    content: "";
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+.container .loader-03:hover div {
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes circular {
+    to {
+        transform: translate(-30px, 70px)
+            rotate(calc((45deg * var(--i)) + 360deg));
+    }
+}
+
+/* Loader 04 */
+.container .loader-04 span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform-origin: 30px 30px;
+    transform: translate(-30px, 70px) rotate(calc(45deg * var(--i)));
+}
+
+.container .loader-04:hover span {
+    animation: circular 1.5s linear infinite;
+}
+
+/* Loader 05 */
+.container .loader-05 span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: calc(var(--i) * 0.14 + 0.2);
+    transform-origin: 30px 30px;
+    transform: translate(-30px, 70px) rotate(calc(45deg * var(--i)));
+}
+
+.container .loader-05:hover span {
+    animation: circular 1.5s linear infinite;
+}
+
+@keyframes loader-06 {
+    to {
+        transform: translate(-30px, 70px)
+            rotate(calc((30deg * var(--i)) + 360deg));
+    }
+}
+
+/* Loader 06 */
+.container .loader-06 span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: calc(var(--i) * 0.14 - 0.1);
+    transform-origin: 30px 30px;
+    transform: translate(-30px, 70px) rotate(calc(30deg * var(--i)));
+}
+
+.container .loader-06:hover span {
+    animation: loader-06 1.5s linear infinite;
+}
+
+/* Loader 07 */
+.loader-07 {
+    grid-column: 1 / -1;
+}
+
+.loader-07 > div {
+    position: relative;
+    width: 260px;
+    height: 400px;
+    background: #383838;
+    border-radius: 24px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.loader-07:hover > div::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 120%;
+    background: linear-gradient(to bottom, #1251ff, #ff29b1);
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-07 > div::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 390px;
+    border-radius: 22px;
+    background-color: #000;
+}

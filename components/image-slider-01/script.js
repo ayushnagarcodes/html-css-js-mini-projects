@@ -1,84 +1,81 @@
-let imgArray = [
-    "./images/img1.jpg",
-    "./images/img2.jpg",
-    "./images/img3.jpg",
-    "./images/img4.jpg",
-    "./images/img5.jpg",
-];
-let cardMainImg = document.querySelector(".card-main img");
-let rightArrow = document.querySelector(".right-arrow");
+let cardsArr = document.querySelectorAll(".card");
 let leftArrow = document.querySelector(".left-arrow");
-let counter = 0;
-let arrIndex = 0;
-let containerList = document.querySelectorAll(".container");
-let totalCardCount = document.querySelector(".card-count--total");
-let currentCardCount = document.querySelector(".card-count--current");
-let card2 = document.getElementById("card-2");
-let card5 = document.getElementById("card-5");
+let rightArrow = document.querySelector(".right-arrow");
+let dotsArr = document.querySelectorAll(".dot");
+let index = 0;
 
-function checkArrIndex() {
-    if (arrIndex < 0) {
-        arrIndex += 5;
-    } else if (arrIndex === 0) {
-        arrIndex = 0;
-    }
+function checkIndex() {
+  if (index < 0) {
+    index = 0;
+  } else if (index > cardsArr.length - 1) {
+    index = 2;
+  }
 }
 
-function clickRightArrow() {
-    rightArrow.click();
-}
-card2.addEventListener("click", clickRightArrow);
-
-function clickLeftArrow() {
-    leftArrow.click();
-}
-card5.addEventListener("click", clickLeftArrow);
-
-function updateCard2() {
-    card2.removeEventListener("click", clickRightArrow);
-    card2 = document.getElementById("card-2");
-    card2.addEventListener("click", clickRightArrow);
+function changeActiveDot() {
+  let activeDot = document.querySelector(".active-dot");
+  activeDot.classList.remove("active-dot");
+  dotsArr[index].classList.add("active-dot");
 }
 
-function updateCard5() {
-    card5.removeEventListener("click", clickLeftArrow);
-    card5 = document.getElementById("card-5");
-    card5.addEventListener("click", clickLeftArrow);
-}
-
-function changeSliderImg() {
-    containerList.forEach((element, index) => {
-        let num = (index + 1 - arrIndex) % 5;
-        if (num <= 0) {
-            num += 5;
-        }
-        element.setAttribute("id", `card-${num}`);
-    });
-}
-
-function changeCardCount() {
-    currentCardCount.innerText = arrIndex + 1;
-    totalCardCount.innerText = containerList.length;
+function checkArrows() {
+  if (index <= 0) {
+    leftArrow.classList.add("deactivate");
+  } else if (index > 0) {
+    leftArrow.classList.remove("deactivate");
+  }
+  
+  if (index >= cardsArr.length - 1) {
+    rightArrow.classList.add("deactivate");
+  } else if (index < cardsArr.length - 1) {
+    rightArrow.classList.remove("deactivate");
+  }
 }
 
 rightArrow.onclick = () => {
-    counter++;
-    arrIndex = counter % 5;
-    checkArrIndex();
-    cardMainImg.src = imgArray[arrIndex];
-    changeSliderImg();
-    changeCardCount();
-    updateCard2();
-    updateCard5();
+  index++;
+  checkIndex();
+
+  cardsArr[index].classList.add("active-next");
+  setTimeout(() => {
+    let activeCardNext = document.querySelector(".active-next");
+    activeCardNext.style.visibility = "visible";
+    activeCardNext.classList.remove("active-next");
+  }, 1000);
+
+  changeActiveDot();
+  checkArrows();
 };
 
 leftArrow.onclick = () => {
-    counter--;
-    arrIndex = counter % 5;
-    checkArrIndex();
-    cardMainImg.src = imgArray[arrIndex];
-    changeSliderImg();
-    changeCardCount();
-    updateCard2();
-    updateCard5();
+  cardsArr[index].classList.add("active-previous");
+  setTimeout(() => {
+    let activeCardPrevious = document.querySelector(".active-previous");
+    activeCardPrevious.style.visibility = "hidden";
+    activeCardPrevious.classList.remove("active-previous");
+  }, 1000);
+
+  index--;
+  checkIndex();
+  changeActiveDot();
+  checkArrows();
 };
+
+dotsArr.forEach((element, dotsArrIndex) => {
+  element.addEventListener("click", () => {
+    let activeDot = document.querySelector(".active-dot");
+    activeDot.classList.remove("active-dot");
+    element.classList.add("active-dot");
+    
+    let shift = Math.abs(index - dotsArrIndex);
+    if (dotsArrIndex > index) {
+      for (let i = 0; i < shift; i++) {
+        rightArrow.click();
+      }
+    } else if (dotsArrIndex < index) {
+      for (let i = 0; i < shift; i++) {
+        leftArrow.click();
+      }
+    }
+  });
+});

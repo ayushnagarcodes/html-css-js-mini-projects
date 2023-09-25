@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" type="text/css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700"
+            rel="stylesheet"
+        />
+        <title>Nav Menu Responsive 01</title>
+    </head>
+    <body>
+        <nav>
+            <p class="heading">Dashboard</p>
+            <div class="toggle">
+                <img src="profile.png" alt="profile" />
+                <div id="hamburger-menu"><span></span></div>
+            </div>
+
+            <div class="side-nav">
+                <div class="profile">
+                    <img src="profile.png" alt="profile" />
+                    <p class="username">ayushnagarcodes</p>
+                    <p class="hobby">Frontend Developer</p>
+                </div>
+                <hr />
+                <div class="menu">
+                    <button class="home-btn">
+                        <ion-icon name="home-outline"></ion-icon
+                        ><span>Home</span>
+                    </button>
+                    <button class="settings-btn">
+                        <ion-icon name="settings-outline"></ion-icon
+                        ><span>Settings</span>
+                    </button>
+                    <button class="profile-btn">
+                        <ion-icon name="person-outline"></ion-icon
+                        ><span>Profile</span>
+                    </button>
+                </div>
+                <hr />
+                <div class="sign-out">
+                    <button class="sign-out--btn">
+                        <ion-icon name="log-out-outline"></ion-icon
+                        ><span>Sign Out</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script>
+            const navMenu = document.querySelector("nav");
+            const hamburgerMenu = document.getElementById("hamburger-menu");
+            hamburgerMenu.onclick = () => {
+                navMenu.classList.toggle("active");
+            };
+        </script>
+    </body>
+</html>

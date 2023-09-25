@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100svh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background: rgb(39, 39, 39);
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .heading {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(238, 238, 238);
+}
+
+nav .toggle {
+    display: none;
+    gap: 14px;
+    z-index: 10;
+}
+
+nav .toggle img {
+    height: 40px;
+    width: 40px;
+}
+
+nav .toggle #hamburger-menu {
+    height: 40px;
+    width: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+nav .toggle #hamburger-menu span {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 30px;
+    background-color: #fff;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+nav.active .toggle #hamburger-menu span {
+    transform: translateY(0) rotate(-45deg);
+    transition: 0.5s;
+}
+
+nav .toggle #hamburger-menu::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    background-color: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px #fff;
+    transition: 0.5s;
+}
+
+nav.active .toggle #hamburger-menu::before {
+    transform: translateY(0) rotate(45deg);
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+nav .side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(21, 21, 21);
+    padding: 48px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+nav .side-nav hr {
+    width: 100%;
+    border: 0.2px solid rgb(45, 45, 45);
+}
+
+nav .side-nav .profile {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .side-nav .profile img {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+nav .side-nav .profile .username {
+    font-size: 18px;
+    color: rgb(226, 226, 226);
+    margin-bottom: 4px;
+}
+
+nav .side-nav .profile .hobby {
+    font-size: 14px;
+    color: rgb(173, 173, 173);
+}
+
+nav .side-nav .menu {
+    width: 80%;
+    padding-left: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+nav .side-nav .menu .home-btn,
+nav .side-nav .menu .settings-btn,
+nav .side-nav .menu .profile-btn {
+    background: none;
+    border: none;
+    color: rgb(226, 226, 226);
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+nav .side-nav .menu button ion-icon {
+    font-size: 18px;
+}
+
+nav .side-nav .menu button span {
+    margin-top: 2px;
+    font-size: 14px;
+}
+
+nav .side-nav .sign-out {
+    width: 80%;
+    padding-left: 36px;
+}
+
+nav .side-nav .sign-out .sign-out--btn {
+    background: none;
+    border: none;
+    color: rgb(226, 226, 226);
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+nav .side-nav .sign-out button ion-icon {
+    font-size: 22px;
+}
+
+nav .side-nav .sign-out button span {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+    nav .toggle {
+        display: flex;
+    }
+
+    nav .toggle img {
+        transition: 0.2s;
+        transition-delay: 0.1s;
+    }
+
+    nav.active .toggle img {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: 0.2s;
+    }
+
+    nav .side-nav {
+        right: -250px;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    nav.active .side-nav {
+        transform: translateX(-250px);
+        opacity: 1;
+        transition: 0.4s;
+        transition-delay: 0.1s;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    nav .toggle {
+        display: flex;
+    }
+
+    nav .side-nav {
+        right: -250px;
+        transition: opacity 0.4s;
+    }
+
+    nav.active .side-nav {
+        width: 100%;
+        transition: opacity 0.4s;
+    }
+
+    nav .side-nav .menu,
+    nav .side-nav .sign-out {
+        padding-left: 12px;
+    }
+}

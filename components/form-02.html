@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:regular,500,500italic,600"
+            rel="stylesheet"
+        />
+        <title>Form 02</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                font-family: "Poppins", sans-serif;
+                background-color: #252525;
+            }
+
+            form {
+                height: 240px;
+                width: 300px;
+                margin: 200px auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 56px;
+                overflow-x: hidden;
+            }
+
+            form > div {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            form > div label {
+                position: absolute;
+                left: 0;
+                font-size: 22px;
+                color: rgba(196, 196, 196, 0.816);
+                cursor: text;
+                letter-spacing: 1px;
+                transition: 0.5s;
+            }
+
+            form > div input:focus ~ label,
+            form > div input:valid ~ label {
+                font-size: 16px;
+                color: rgb(63, 153, 231);
+                transform: translateY(-32px);
+                transition: 0.5s;
+            }
+
+            form > div input {
+                width: 300px;
+                background-color: transparent;
+                border: none;
+                font-size: 24px;
+                padding: 8px 0;
+                color: rgb(241, 241, 241);
+            }
+
+            form > div input:focus {
+                outline: none;
+            }
+
+            form > div > .animated-border {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 100%;
+                background: #fff;
+                overflow: hidden;
+            }
+
+            form > div > .animated-border::before {
+                content: "";
+                position: absolute;
+                left: -100%;
+                bottom: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(
+                    to right,
+                    rgb(229, 33, 108),
+                    rgb(169, 49, 255),
+                    rgb(64, 140, 255),
+                    rgb(255, 234, 0),
+                    rgb(229, 33, 108)
+                );
+                animation: animate 1s linear infinite;
+                transition: 0.5s;
+            }
+
+            form > div input:focus ~ .animated-border::before,
+            form > div input:valid ~ .animated-border::before {
+                left: 0;
+                transition: 0.5s;
+            }
+
+            @keyframes animate {
+                from {
+                    background-position-x: 0;
+                }
+                to {
+                    background-position-x: 300px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <input id="first-name" type="text" required />
+                <label for="first-name">FIRST NAME</label>
+                <div class="animated-border"></div>
+            </div>
+
+            <div>
+                <input id="last-name" type="text" required />
+                <label for="last-name">LAST NAME</label>
+                <div class="animated-border"></div>
+            </div>
+        </form>
+    </body>
+</html>

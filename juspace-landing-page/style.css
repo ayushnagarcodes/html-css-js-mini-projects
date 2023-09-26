@@ -33,6 +33,14 @@ body {
     overflow-x: hidden;
 }
 
+#hamburger-menu,
+ul,
+button,
+select,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 main {
     max-width: 140rem;
     margin: 0 auto;

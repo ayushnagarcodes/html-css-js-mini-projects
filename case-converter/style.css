@@ -10,6 +10,11 @@ body {
     font-style: normal;
 }
 
+button,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
 main {
     width: clamp(300px, 70%, 800px);
     min-height: 745px;

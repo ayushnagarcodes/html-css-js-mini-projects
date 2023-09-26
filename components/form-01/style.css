@@ -16,6 +16,12 @@ body {
     z-index: 0;
 }
 
+input,
+select,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;

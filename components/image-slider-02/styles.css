@@ -20,6 +20,10 @@ img {
     width: 100%;
 }
 
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .card-main {
     position: relative;
     width: 300px;

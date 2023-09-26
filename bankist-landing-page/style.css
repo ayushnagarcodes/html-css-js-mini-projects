@@ -51,6 +51,14 @@ body {
     font-size: var(--fs-400);
 }
 
+#hamburger-menu,
+ul,
+button,
+a,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 img {
     width: 100%;
 }

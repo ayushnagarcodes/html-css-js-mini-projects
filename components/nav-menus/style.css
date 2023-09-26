@@ -22,15 +22,21 @@ main > * {
     flex-grow: 1;
 }
 
+ul,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* Common */
 .menu {
-    height: 100svh;
+    height: 100vh;
     display: grid;
     place-items: center;
 }
 
 /* Menu 1 */
 .menu-1 {
+    height: 100svh;
     background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
 }
 

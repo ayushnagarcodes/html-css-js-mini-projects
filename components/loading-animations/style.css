@@ -11,6 +11,10 @@ body {
     padding: 48px 24px;
 }
 
+div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 h1 {
     margin-bottom: 48px;
     font-family: "Poppins", sans-serif;

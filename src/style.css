@@ -35,6 +35,7 @@ a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {

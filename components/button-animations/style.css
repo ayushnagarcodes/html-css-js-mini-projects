@@ -21,6 +21,10 @@ h1 {
     color: #f3f3f3;
 }
 
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 section {
     max-width: 1200px;
     margin: 0 auto;

@@ -10,6 +10,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+button,
+.dot-menu div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .gallery {
     position: relative;
     width: 100%;

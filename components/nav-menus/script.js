@@ -61,3 +61,10 @@ const toggleBtnMenu5 = document.querySelector(".menu-5 .toggle-btn");
 toggleBtnMenu5.onclick = () => {
     burgerMenu5.classList.toggle("active");
 };
+
+// Menu 6
+const navMenu6 = document.querySelector(".menu-6 .nav-container");
+const openerMenu6 = document.querySelector(".menu-6 .opener");
+openerMenu6.onclick = () => {
+    navMenu6.classList.toggle("active");
+}
